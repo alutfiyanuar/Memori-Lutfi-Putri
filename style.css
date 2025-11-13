@@ -212,9 +212,14 @@ body {
 
 .story p,
 .gallery p {
+  margin-top: 5px;
   font-size: 1.2rem;
   font-style: italic;
   font-weight: 500;
+}
+
+.gallery p {
+  text-align: center;
 }
 
 .story h2,
