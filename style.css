@@ -19,7 +19,7 @@ body {
   left: 0;
   min-width: 100%;
   min-height: 100%;
-  background-image: url(img/herobg.jpg);
+  background-image: url(img/herobg2.jpg);
   background-position: center;
   background-size: cover;
   z-index: -1;
@@ -81,7 +81,7 @@ body {
 }
 
 .home {
-  background-image: url(img/bghome.png);
+  background-image: url(img/bgweb3.png);
   background-size: cover;
   background-position: center;
   min-height: 100vh;
@@ -96,9 +96,9 @@ body {
 }
 
 .home p {
-  font-style: italic;
   margin-top: 1.5rem;
-  color: #444;
+  color: #000000;
+  font-size: 1.5rem;
 }
 
 .home .couple {
@@ -107,7 +107,7 @@ body {
 }
 
 .home .couple h2 {
-  font-family: sacramento;
+  font-family: Purple-Purse;
   font-size: 3.5rem;
   font-weight: bold;
   text-shadow: var(--shadow);
@@ -137,7 +137,6 @@ body {
 .event,
 .rsvp {
   min-height: 100vh;
-  background-image: url(img/bg-black.png);
   color: var(--white);
   padding-top: 6rem;
   padding-bottom: 8rem;
@@ -202,18 +201,18 @@ body {
 .gallery span,
 .gift span {
   text-transform: uppercase;
-  color: #666;
-  font-size: 0.8rem;
+  color: #000000;
+  font-size: 1.2rem;
   letter-spacing: 1px;
   margin-bottom: 1rem;
   display: block;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .story p,
 .gallery p {
   margin-top: 5px;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-style: italic;
   font-weight: 500;
 }
@@ -225,11 +224,11 @@ body {
 .story h2,
 .gallery h2,
 .gift h2 {
-  font-family: Handlee;
-  font-size: 5rem;
-  color: var(--blue);
+  font-family: "Press Start 2P", system-ui;
+  font-size: 3rem;
+  color: #000000;
   font-weight: bold;
-  text-shadow: var(--shadow);
+  text-shadow: -2px 2px 0 #ffffff;
 }
 
 .timeline {
@@ -322,7 +321,7 @@ body {
 }
 
 .gallery {
-  background-image: url(img/bghome.png);
+  background-image: url(img/tekstur2.png);
 }
 
 .gallery .img-fluid {
@@ -330,17 +329,17 @@ body {
 }
 
 .rsvp {
-  background-image: url(img/rsvp2.png);
+  background-image: url(img/awan1.png);
   color: var(--blue);
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: bottom;
   background-size: cover;
 }
 
 .rsvp h2 {
-  font-family: Handlee;
-  font-size: 5rem;
-  text-shadow: var(--shadow);
+  font-family: "Press Start 2P", system-ui;
+  font-size: 3rem;
+  text-shadow: 1px 2px 0 #ffffff;
   margin-top: 10px;
 }
 
@@ -545,7 +544,7 @@ body {
 
 footer {
   padding: 3rem;
-  background-color: var(--blue);
+  background-image: url(img/tanah.png);
   color: white;
 }
 
@@ -603,6 +602,10 @@ iframe {
 @media (max-width: 992px) {
   html {
     font-size: 75%;
+  }
+
+  .hero::before {
+    background-image: url(img/herobg.jpg);
   }
 
   .home .couple img {
