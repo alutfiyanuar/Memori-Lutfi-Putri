@@ -388,15 +388,19 @@ body {
 .cat-gif {
   position: absolute;
   top: -34px;
-  right: 18px;
+  right: 75px;
   z-index: 10;
   transform: scaleX(-1); /* <-- Tambahkan scaleX(-1) di sini */
+  max-width: 50px;
+  height: auto;
 }
 
 .cat2-gif {
   position: absolute;
   top: -34px;
-  left: 18px;
+  left: 65px;
+  max-width: 50px;
+  height: auto;
 }
 
 .form-label {
@@ -635,12 +639,12 @@ iframe {
 @media (max-width: 1200px) {
   .cat-gif {
     top: -15px;
-    right: 20px;
+    right: 58px;
   }
 
   .cat2-gif {
     top: -15px;
-    left: 15px;
+    left: 47px;
   }
 }
 /* Laptop */
