@@ -231,11 +231,21 @@ action="https://script.google.com/macros/s/AKfycby3o_Y8C-ayND1-50gIK291r3KnrgFt3
   <label class="form-label">Pilih Avatar:</label>
   <!-- Wadah untuk avatar -->
   <div id="avatar-options" class="avatar-options">
-    <img src="ava1.png" alt="Ava 1" class="avatar-option" data-avatar="ava1.png" style="width: 40px; height: 40px; margin: 0 5px; cursor: pointer; border: 2px solid transparent;">
-    <img src="ava2.png" alt="Ava 2" class="avatar-option" data-avatar="ava2.png" style="width: 40px; height: 40px; margin: 0 5px; cursor: pointer; border: 2px solid transparent;">
-    <img src="ava3.png" alt="Ava 3" class="avatar-option" data-avatar="ava3.png" style="width: 40px; height: 40px; margin: 0 5px; cursor: pointer; border: 2px solid transparent;">
-    <img src="ava4.png" alt="Ava 4" class="avatar-option" data-avatar="ava4.png" style="width: 40px; height: 40px; margin: 0 5px; cursor: pointer; border: 2px solid transparent;">
-    <img src="ava5.png" alt="Ava 5" class="avatar-option" data-avatar="ava5.png" style="width: 40px; height: 40px; margin: 0 5px; cursor: pointer; border: 2px solid transparent;">
+    <div class="avatar-box" data-avatar="ava1.png">
+      <img src="ava1.png" alt="Ava 1" class="avatar-option">
+    </div>
+    <div class="avatar-box" data-avatar="ava2.png">
+      <img src="ava2.png" alt="Ava 2" class="avatar-option">
+    </div>
+    <div class="avatar-box" data-avatar="ava3.png">
+      <img src="ava3.png" alt="Ava 3" class="avatar-option">
+    </div>
+    <div class="avatar-box" data-avatar="ava4.png">
+      <img src="ava4.png" alt="Ava 4" class="avatar-option">
+    </div>
+    <div class="avatar-box" data-avatar="ava5.png">
+      <img src="ava5.png" alt="Ava 5" class="avatar-option">
+    </div>
   </div>
   <!-- Input tersembunyi untuk menyimpan nilai avatar yang dipilih -->
   <input type="hidden" id="selected-avatar" name="avatar" value="ava1.png"> <!-- Default value -->
@@ -742,42 +752,40 @@ document.querySelector("#commentName").value = nama;
 <!-- JAVASCRIPT AVATAR CLICK HANDLER -->
 <script>
 // Tangani klik pada gambar avatar
-// Tangani klik pada gambar avatar
 document.addEventListener('DOMContentLoaded', function() {
-    const avatarOptions = document.querySelectorAll('.avatar-option');
+    const avatarBoxes = document.querySelectorAll('.avatar-box'); // Ambil semua kotak avatar
     const selectedAvatarInput = document.getElementById('selected-avatar');
 
     // Fungsi untuk memperbarui tampilan avatar dan input tersembunyi
-    function selectAvatar(avatarValue, clickedImg) {
-        // Reset semua gambar avatar ke gaya default
-        avatarOptions.forEach(img => {
-            img.style.border = '2px solid transparent'; // Border transparan
+    function selectAvatar(avatarValue, clickedBox) {
+        // Hapus kelas 'selected' dari semua kotak avatar
+        avatarBoxes.forEach(box => {
+            box.classList.remove('selected');
         });
 
-        // Atur gaya untuk avatar yang dipilih
-        if (clickedImg) {
-            clickedImg.style.border = '2px solid #007bff'; // Border biru tebal
+        // Tambahkan kelas 'selected' ke kotak avatar yang dipilih
+        if (clickedBox) {
+            clickedBox.classList.add('selected');
         }
 
         // Perbarui nilai input tersembunyi
         selectedAvatarInput.value = avatarValue;
     }
 
-    // Tambahkan event listener ke setiap gambar avatar
-    avatarOptions.forEach(img => {
-        img.addEventListener('click', function() {
+    // Tambahkan event listener ke setiap kotak avatar
+    avatarBoxes.forEach(box => {
+        box.addEventListener('click', function() {
             const avatarValue = this.getAttribute('data-avatar');
             if (avatarValue) {
-                selectAvatar(avatarValue, this); // Kirim juga elemen gambar yang diklik
+                selectAvatar(avatarValue, this); // Kirim elemen kotak yang diklik
             }
         });
     });
 
     // Set default avatar (ava1.png) saat halaman dimuat
-    // Cari gambar pertama (atau gambar dengan data-avatar="ava1.png") dan beri efek
-    const firstAvatar = document.querySelector('.avatar-option[data-avatar="ava1.png"]');
-    if (firstAvatar) {
-        selectAvatar('ava1.png', firstAvatar);
+    const firstAvatarBox = document.querySelector('.avatar-box[data-avatar="ava1.png"]');
+    if (firstAvatarBox) {
+        selectAvatar('ava1.png', firstAvatarBox);
     }
 });
 </script>
