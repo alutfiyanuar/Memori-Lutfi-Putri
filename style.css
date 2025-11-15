@@ -753,6 +753,10 @@ iframe {
     top: 22px;
   }
 
+  .rsvp .card {
+    margin-top: 20px;
+  }
+
   .hero h4 {
     margin-top: 30rem;
   }
