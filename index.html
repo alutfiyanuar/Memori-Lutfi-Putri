@@ -556,28 +556,38 @@ action="https://script.google.com/macros/s/AKfycby3o_Y8C-ayND1-50gIK291r3KnrgFt3
   publishBtn.addEventListener("click", addPost);
 
   // Load komentar dari Google Sheets saat halaman dibuka
-  window.addEventListener("load", function () {
+window.addEventListener("load", function () {
     const commentsContainer = document.querySelector(".comments");
     const commentCountElement = document.getElementById("jumlah-comment");
 
-    // Perbarui URL fetch jika skrip Anda sekarang mengembalikan avatar
-    fetch('https://script.google.com/macros/s/AKfycby3o_Y8C-ayND1-50gIK291r3KnrgFt3IxYtezZIfbbW-Bd9q85tjfNHfSDSer4hv1kzQ/exec             ')
+    fetch('https://script.google.com/macros/s/AKfycby3o_Y8C-ayND1-50gIK291r3KnrgFt3IxYtezZIfbbW-Bd9q85tjfNHfSDSer4hv1kzQ/exec')
       .then(response => response.json())
       .then(data => {
         if (data.length > 0) {
           data.forEach(entry => {
             const name = entry["commentName"] || "Anonymous";
             const message = entry["comments"] || "";
-            const date = new Date().toLocaleDateString(); // Ambil tanggal saat dimuat
+            
+            // ✅ Gunakan timestamp dari spreadsheet
+            let date;
+            try {
+              // Jika timestamp adalah string ISO
+              date = new Date(entry.timestamp).toLocaleDateString();
+            } catch (error) {
+              // Fallback jika timestamp tidak valid
+              console.error("Invalid date:", entry.timestamp);
+              date = new Date().toLocaleDateString(); // Atau gunakan default
+            }
+
             const likes = entry["likes"] || 0;
-            // Ambil avatar dari sheet, jika tidak ada, gunakan fungsi lama sebagai fallback
-            const avatar = entry["avatar"] || getRandomAvatar(); // Gunakan fallback acak jika tidak disimpan
+            const avatar = entry["avatar"] || getRandomAvatar();
 
             const publihsed = `
               <div class="parents">
                 <img src="${avatar}" alt="User">
                 <div class="box">
                   <h1>${name}</h1>
+                  <!-- Sekarang akan menampilkan tanggal dari sheet -->
                   <span class="date">${date}</span>
                   <p>${message}</p>
                   <div class="reactions">
@@ -594,8 +604,11 @@ action="https://script.google.com/macros/s/AKfycby3o_Y8C-ayND1-50gIK291r3KnrgFt3
           const commentsNum = data.length;
           commentCountElement.textContent = commentsNum;
         }
+      })
+      .catch(error => {
+        console.error("Error loading comments:", error);
       });
-  });
+});
 </script>
 
 <!-- FUNGSI LIKE COMMENT -->
