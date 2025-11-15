@@ -212,9 +212,10 @@ body {
 .story p,
 .gallery p {
   margin-top: 5px;
-  font-size: 1.3rem;
-  font-style: italic;
+  font-size: 0.8rem;
   font-weight: 500;
+  font-family: "Press Start 2P", system-ui;
+  text-shadow: 1px 1px 0 #eff2f6;
 }
 
 .gallery p {
@@ -358,6 +359,7 @@ body {
 .rsvp .card {
   background-color: #eff2f6;
   border-radius: 10px;
+  margin-top: 10px;
 }
 
 .rsvp .card-body {
@@ -369,9 +371,42 @@ body {
   border-top-right-radius: 10px;
 }
 
+/* Tambahkan di bagian bawah file style.css Anda */
+.potz-gif {
+  position: absolute;
+  bottom: 0;
+  left: 45%;
+  z-index: 10;
+}
+
+/* GIF */
+.potz-gif img {
+  max-width: 80px;
+  height: auto;
+}
+
+.cat-gif {
+  position: absolute;
+  top: -34px;
+  right: 18px;
+  z-index: 10;
+  transform: scaleX(-1); /* <-- Tambahkan scaleX(-1) di sini */
+}
+
+.cat2-gif {
+  position: absolute;
+  top: -34px;
+  left: 18px;
+}
+
 .form-label {
   color: var(--blue);
   font-size: 1rem;
+}
+
+/* Tambahkan di bagian bawah file style.css Anda */
+.love-gif {
+  display: none;
 }
 
 /* Komentar */
@@ -597,7 +632,17 @@ iframe {
 }
 
 /* Media Query */
+@media (max-width: 1200px) {
+  .cat-gif {
+    top: -15px;
+    right: 20px;
+  }
 
+  .cat2-gif {
+    top: -15px;
+    left: 15px;
+  }
+}
 /* Laptop */
 @media (max-width: 992px) {
   html {
@@ -605,12 +650,38 @@ iframe {
   }
 
   .hero::before {
-    background-image: url(img/herobg.jpg);
+    background-image: url(img/herobg.png);
   }
 
   .home .couple img {
     margin-top: 0;
     width: 80%;
+  }
+
+  .cat-gif {
+    top: -28px;
+    right: 50px;
+    transform: scaleX(1);
+  }
+
+  .cat2-gif {
+    top: 23px;
+    left: 40px;
+    transform: scaleX(-1);
+  }
+
+  .love-gif {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    display: block;
+  }
+
+  .love-gif img {
+    max-width: 50px;
+    height: auto;
   }
 
   .home .couple .putri {
@@ -655,6 +726,11 @@ iframe {
 @media (max-width: 768px) {
   html {
     font-size: 65%;
+  }
+
+  .cat-gif {
+    top: -30px;
+    right: 30px;
   }
 
   .hero h4 {
