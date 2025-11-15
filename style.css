@@ -733,8 +733,12 @@ iframe {
   }
 
   .cat-gif {
-    top: -28px;
+    top: -29px;
     right: 30px;
+  }
+
+  .cat2-gif {
+    top: 18px;
   }
 
   .hero h4 {
