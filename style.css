@@ -739,7 +739,7 @@ iframe {
 }
 
 /* Tablet */
-@media (max-width: 800px) {
+@media (max-width: 768px) {
   html {
     font-size: 65%;
   }
@@ -821,6 +821,10 @@ iframe {
 
   .hero h4 {
     margin-top: 30rem;
+  }
+
+  .cat2-gif {
+    top: 25px;
   }
 
   .hero p {
