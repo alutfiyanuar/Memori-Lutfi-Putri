@@ -215,7 +215,7 @@ body {
   font-size: 0.8rem;
   font-weight: 500;
   font-family: "Press Start 2P", system-ui;
-  text-shadow: 1px 1px 0 #eff2f6;
+  text-shadow: -1px 1px 1px #eff2f6;
 }
 
 .gallery p {
@@ -426,6 +426,41 @@ body {
 /* Tambahkan di bagian bawah file style.css Anda */
 .love-gif {
   display: none;
+}
+/* Gaya untuk kotak avatar */
+.avatar-box {
+  display: inline-block;
+  width: 45px; /* Ukuran lebar tetap */
+  height: 45px; /* Ukuran tinggi tetap */
+  margin: 0 5px;
+  padding: 5px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  background-color: #f8f9fa; /* Warna latar belakang default */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Bayangan default */
+  transition: all 0.2s ease;
+}
+
+.avatar-box:hover {
+  background-color: #e9ecef; /* Warna latar belakang saat hover */
+  transform: translateY(-2px); /* Sedikit naik saat hover */
+}
+
+/* Gaya untuk kotak avatar yang dipilih */
+.avatar-box.selected {
+  background-color: #fff; /* Warna latar belakang putih saat dipilih */
+  border-color: #007bff; /* Border biru tebal */
+  box-shadow: -2px 6px 8px rgba(0, 0, 0, 0.2), 0 0 0 2px #eaeaea; /* Bayangan lebih tebal dan border dalam */
+  transform: translateY(-4px) scale(1.08); /* Menonjol dan sedikit membesar */
+}
+
+/* Gaya untuk gambar avatar di dalam kotak */
+.avatar-box .avatar-option {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px; /* Radius kecil untuk gambar agar tidak tumpah */
 }
 
 /* Komentar */
@@ -691,7 +726,7 @@ iframe {
 
   .love-gif {
     position: absolute;
-    top: 20px;
+    top: 17px;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
@@ -699,7 +734,7 @@ iframe {
   }
 
   .love-gif img {
-    max-width: 50px;
+    max-width: 45px;
     height: auto;
   }
 
@@ -758,42 +793,6 @@ iframe {
 
   .rsvp .card {
     margin-top: 20px;
-  }
-
-  /* Gaya untuk kotak avatar */
-  .avatar-box {
-    display: inline-block;
-    width: 45px; /* Ukuran lebar tetap */
-    height: 45px; /* Ukuran tinggi tetap */
-    margin: 0 5px;
-    padding: 5px;
-    cursor: pointer;
-    border: 1px solid transparent;
-    background-color: #f8f9fa; /* Warna latar belakang default */
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Bayangan default */
-    transition: all 0.2s ease;
-  }
-
-  .avatar-box:hover {
-    background-color: #e9ecef; /* Warna latar belakang saat hover */
-    transform: translateY(-2px); /* Sedikit naik saat hover */
-  }
-
-  /* Gaya untuk kotak avatar yang dipilih */
-  .avatar-box.selected {
-    background-color: #fff; /* Warna latar belakang putih saat dipilih */
-    border-color: #007bff; /* Border biru tebal */
-    box-shadow: -2px 6px 8px rgba(0, 0, 0, 0.2), 0 0 0 2px #eaeaea; /* Bayangan lebih tebal dan border dalam */
-    transform: translateY(-4px) scale(1.1); /* Menonjol dan sedikit membesar */
-  }
-
-  /* Gaya untuk gambar avatar di dalam kotak */
-  .avatar-box .avatar-option {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 4px; /* Radius kecil untuk gambar agar tidak tumpah */
   }
 
   .hero h4 {

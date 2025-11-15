@@ -756,6 +756,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const avatarBoxes = document.querySelectorAll('.avatar-box'); // Ambil semua kotak avatar
     const selectedAvatarInput = document.getElementById('selected-avatar');
 
+    // Fungsi untuk memberikan getaran jika didukung
+    function triggerVibration(duration = 50) { // Durasi dalam milidetik (default 50ms)
+        if ('vibrate' in navigator) {
+            navigator.vibrate(duration);
+        } else {
+            // console.log("Vibration API tidak didukung di browser ini.");
+            // Anda bisa menambahkan fallback visual di sini jika diinginkan
+        }
+    }
+
     // Fungsi untuk memperbarui tampilan avatar dan input tersembunyi
     function selectAvatar(avatarValue, clickedBox) {
         // Hapus kelas 'selected' dari semua kotak avatar
@@ -770,6 +780,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Perbarui nilai input tersembunyi
         selectedAvatarInput.value = avatarValue;
+
+        // --- PENAMBAHAN FUNGSI VIBRATE ---
+        // Picu getaran saat avatar dipilih
+        triggerVibration(50); // Getar selama 50ms
+        // -------------------------------
     }
 
     // Tambahkan event listener ke setiap kotak avatar
