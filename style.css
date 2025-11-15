@@ -95,6 +95,12 @@ body {
   color: var(--blue);
 }
 
+.home h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
 .home p {
   margin-top: 1.5rem;
   color: #000000;
