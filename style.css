@@ -375,31 +375,6 @@ body {
 
 /* Tambahkan di bagian bawah file style.css Anda */
 
-.klik-gif {
-  position: absolute;
-  z-index: 10;
-  right: 38%;
-  bottom: 19%;
-}
-
-.klik2-gif {
-  position: absolute;
-  z-index: 10;
-  left: 38%;
-  bottom: 19%;
-}
-
-.klik-gif img {
-  max-width: 60px;
-  height: auto;
-  transform: scaleX(-1);
-}
-
-.klik2-gif img {
-  max-width: 60px;
-  height: auto;
-}
-
 .potz-gif {
   position: absolute;
   bottom: 0;
@@ -714,14 +689,6 @@ iframe {
 
 /* Media Query */
 @media (max-width: 1200px) {
-  .klik-gif {
-    right: 35%;
-  }
-
-  .klik2-gif {
-    left: 35%;
-  }
-
   .cat-gif {
     top: -15px;
     right: 58px;
@@ -734,24 +701,6 @@ iframe {
 }
 /* Laptop */
 @media (max-width: 992px) {
-  .klik-gif {
-    right: 36%;
-    bottom: 26%;
-  }
-
-  .klik2-gif {
-    left: 36%;
-    bottom: 26%;
-  }
-
-  .klik-gif img {
-    max-width: 50px;
-  }
-
-  .klik2-gif img {
-    max-width: 50px;
-  }
-
   html {
     font-size: 75%;
   }
@@ -831,23 +780,6 @@ iframe {
 
 /* Tablet */
 @media (max-width: 768px) {
-  .klik-gif {
-    right: 33%;
-    bottom: 2.5%;
-  }
-
-  .klik2-gif {
-    left: 33%;
-    bottom: 2.5%;
-  }
-
-  .klik-gif img {
-    max-width: 50px;
-  }
-
-  .klik2-gif img {
-    max-width: 50px;
-  }
   html {
     font-size: 65%;
   }
