@@ -95,12 +95,6 @@ body {
   color: var(--blue);
 }
 
-.home h3 {
-  margin-top: 20px;
-  margin-bottom: 10px;
-  font-size: 2rem;
-}
-
 .home p {
   margin-top: 1.5rem;
   color: #000000;
@@ -377,7 +371,33 @@ body {
   border-top-right-radius: 10px;
 }
 
+/* GIF */
+
 /* Tambahkan di bagian bawah file style.css Anda */
+
+.klik-gif {
+  position: absolute;
+  z-index: 10;
+  right: 38%;
+}
+
+.klik2-gif {
+  position: absolute;
+  z-index: 10;
+  left: 38%;
+}
+
+.klik-gif img {
+  max-width: 60px;
+  height: auto;
+}
+
+.klik2-gif img {
+  max-width: 60px;
+  height: auto;
+  transform: scaleX(-1);
+}
+
 .potz-gif {
   position: absolute;
   bottom: 0;
@@ -397,7 +417,6 @@ body {
   height: auto;
 }
 
-/* GIF */
 .potz-gif img {
   max-width: 80px;
   height: auto;
@@ -693,6 +712,14 @@ iframe {
 
 /* Media Query */
 @media (max-width: 1200px) {
+  .klik-gif {
+    right: 35%;
+  }
+
+  .klik2-gif {
+    left: 35%;
+  }
+
   .cat-gif {
     top: -15px;
     right: 58px;
@@ -705,6 +732,16 @@ iframe {
 }
 /* Laptop */
 @media (max-width: 992px) {
+  .klik-gif img {
+    right: 35%;
+    max-width: 50px;
+  }
+
+  .klik2-gif img {
+    left: 35%;
+    max-width: 50px;
+  }
+
   html {
     font-size: 75%;
   }
@@ -784,6 +821,21 @@ iframe {
 
 /* Tablet */
 @media (max-width: 768px) {
+  .klik-gif {
+    right: 30%;
+  }
+
+  .klik2-gif {
+    left: 30%;
+  }
+
+  .klik-gif img {
+    max-width: 50px;
+  }
+
+  .klik2-gif img {
+    max-width: 50px;
+  }
   html {
     font-size: 65%;
   }
@@ -859,6 +911,13 @@ iframe {
 }
 /* Mobile Phone */
 @media (max-width: 576px) {
+  .klik-gif img {
+    max-width: 40px;
+  }
+
+  .klik2-gif img {
+    max-width: 40px;
+  }
   html {
     font-size: 60%;
   }
