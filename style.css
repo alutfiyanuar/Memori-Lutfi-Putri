@@ -923,24 +923,6 @@ iframe {
 }
 /* Mobile Phone */
 @media (max-width: 576px) {
-  .klik-gif {
-    right: 32%;
-    bottom: 7%;
-  }
-
-  .klik2-gif {
-    left: 32%;
-    bottom: 7%;
-  }
-
-  .klik-gif img {
-    max-width: 30px;
-  }
-
-  .klik2-gif img {
-    max-width: 30px;
-  }
-
   html {
     font-size: 60%;
   }
