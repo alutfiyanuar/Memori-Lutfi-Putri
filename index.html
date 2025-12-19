@@ -208,7 +208,7 @@
               <span class="comment2">Komentar</span></div>
             <form
 method="POST"
-action="https://script.google.com/macros/s/AKfycby3o_Y8C-ayND1-50gIK291r3KnrgFt3IxYtezZIfbbW-Bd9q85tjfNHfSDSer4hv1kzQ/exec" id="my-form">
+action="https://script.google.com/macros/s/AKfycbyU0F4HjxB7NdMJKpl25lqxk2HbhPwpQI8qvLcoKAjGCIZvCiw4jZ2g5qH0fwdBuGk_kQ/exec" id="my-form">
               <div class="mb-3 content">
                 <input
                   type="text"
@@ -561,7 +561,7 @@ window.addEventListener("load", function () {
     const commentsContainer = document.querySelector(".comments");
     const commentCountElement = document.getElementById("jumlah-comment");
 
-    fetch('https://script.google.com/macros/s/AKfycby3o_Y8C-ayND1-50gIK291r3KnrgFt3IxYtezZIfbbW-Bd9q85tjfNHfSDSer4hv1kzQ/exec')
+    fetch('https://script.google.com/macros/s/AKfycbyU0F4HjxB7NdMJKpl25lqxk2HbhPwpQI8qvLcoKAjGCIZvCiw4jZ2g5qH0fwdBuGk_kQ/exec')
       .then(response => response.json())
       .then(data => {
         if (data.length > 0) {
@@ -648,7 +648,7 @@ window.likeComment = function(button) {
   // Tambahkan parameter action untuk membedakan permintaan
   formData.append('action', 'like');
 
-    fetch('https://script.google.com/macros/s/AKfycby3o_Y8C-ayND1-50gIK291r3KnrgFt3IxYtezZIfbbW-Bd9q85tjfNHfSDSer4hv1kzQ/exec', { // Gunakan URL deployment terbaru
+    fetch('https://script.google.com/macros/s/AKfycbyU0F4HjxB7NdMJKpl25lqxk2HbhPwpQI8qvLcoKAjGCIZvCiw4jZ2g5qH0fwdBuGk_kQ/exec', { // Gunakan URL deployment terbaru
     method: 'POST',
     body: formData,
   })
